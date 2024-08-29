@@ -1,0 +1,22 @@
+.root {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 393px;
+  height: 21px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 127px;
+}
+.homeIndicator {
+  transform-origin: top left;
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 139px;
+  height: 5px;
+  border-radius: 100px;
+  background-color: #000;
+  transform: matrix(-1, 0, 0, 1, 0, 0) translateX(-50%);
+}
