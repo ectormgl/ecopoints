@@ -1,22 +1,21 @@
 {
-  "name": "vite-react-ts",
-  "private": true,
-  "version": "0.0.0",
+  "main": "expo/AppEntry.js",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "expo": "~51.0.28",
+    "expo-status-bar": "~1.12.1",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
+    "@expo/vector-icons": "^14.0.2",
+    "react-native-paper": "4.9.2"
   },
   "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.0.1",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.9"
-  }
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
 }
