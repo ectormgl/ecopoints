@@ -1,34 +1,34 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Switch } from 'react-native';
 
-const RegisterScreen = () => {
-  const [isAgreed, setIsAgreed] = useState(false);
+const LoginScreen = () => {
+  const [isRemembered, setIsRemembered] = useState(false);
 
   return (
     <View style={styles.container}>
      <View style={styles.topSection} />
      
       <View style={styles.bottomSection}> 
-      <Text style={styles.headerText}>Get started</Text>
-      
-      <Text style={styles.inputText}>Full Name:</Text>
-      <TextInput style={styles.input} placeholder="Enter Full Name" />
+      <Text style={styles.headerText}>Welcome back</Text>
       
       <Text style={styles.inputText}>Email:</Text>
       <TextInput style={styles.input} placeholder="Enter Email" />
       <Text style={styles.inputText}>Password:</Text>
       <TextInput style={styles.input} placeholder="Enter Password" secureTextEntry={true} />
       
-      <View style={styles.agreeTermContainer}>
-        <View style={styles.termContainer}>
+      <View style={styles.rememberForgotContainer}>
+        <View style={styles.rememberContainer}>
           <Switch 
-            value={isAgreed} 
-            onValueChange={(value) => setIsAgreed(value)} 
-            thumbColor={isAgreed ? "#fff" : "#fff"}
+            value={isRemembered} 
+            onValueChange={(value) => setIsRemembered(value)} 
+            thumbColor={isRemembered ? "#fff" : "#fff"}
             trackColor={{ false: "#767577", true: "#004400" }} 
           />
-          <Text style={styles.termText}>I agree to the processing of Personal data</Text>
+          <Text style={styles.rememberText}>Remember me</Text>
         </View>
+        <TouchableOpacity>
+          <Text style={styles.forgotText}>Forgot password?</Text>
+        </TouchableOpacity>
       </View>
       
       <TouchableOpacity style={styles.signUpButton}>
@@ -45,9 +45,9 @@ const RegisterScreen = () => {
       </View>
 
       <View style={styles.accountText}>
-        <Text>Already have an account? </Text>
+        <Text>Don’t have an account? </Text>
         <TouchableOpacity>
-          <Text style={styles.signUpLink}>Sign in</Text>
+          <Text style={styles.signUpLink}>Sign up</Text>
         </TouchableOpacity>
       </View>
       </View>
@@ -94,18 +94,23 @@ const styles = StyleSheet.create({
     borderWidth:  1,
     fontSize: 18,
   },
-  agreeTermContainer: {
+  rememberForgotContainer: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 15,
     marginLeft:  30,
   },
-  termContainer: {
+  rememberContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
-  termText: {
+  rememberText: {
     marginLeft: 10,
+  },
+  forgotText: {
+    color: '#003300',
+    marginRight:  30,
   },
   signUpButton: {
     backgroundColor: '#003300',
@@ -119,7 +124,7 @@ const styles = StyleSheet.create({
   signUpButtonText: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize:  18, 
+    fontSize: 18, 
   },
   signUpWithText: {
     textAlign: 'center',
@@ -144,4 +149,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RegisterScreen;
+export default LoginScreen;
